@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"github.com/m4nsur/postgres-lrn/postgres"
 )
 
 func main() {
-	fmt.Println("check ssh ")
+	postgres.CheckConnection()
 }
