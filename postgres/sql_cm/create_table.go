@@ -1,4 +1,4 @@
-package sql
+package sql_cm
 
 import (
 	"context"
@@ -12,14 +12,12 @@ func CreateTable (ctx context.Context, conn *pgx.Conn) error {
 		id SERIAL PRIMARY KEY,
 		title VARCHAR (100) NOT NULL,
 		description VARCHAR (200) NOT NULL,
+		completed BOOLEAN NOT NULL,
 		created_at TIMESTAMP NOT NULL,
 		completed_at TIMESTAMP
 	);
 	`
-	
 	_, err := conn.Exec(ctx,sqlQuery)
-	if err != nil {
-		return err
-	}
+
 	return err
 }

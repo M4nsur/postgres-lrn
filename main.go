@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	postgres "github.com/m4nsur/postgres-lrn/postgres/connection"
-	"github.com/m4nsur/postgres-lrn/postgres/sql"
+	"github.com/m4nsur/postgres-lrn/postgres/sql_cm"
 )
 
 func main() {
@@ -15,10 +15,16 @@ func main() {
 		fmt.Println(err)
 	}
 
-	if err := sql.CreateTable(ctx, conn); err !=nil {
+	if err := sql_cm.CreateTable(ctx, conn); err !=nil {
 		fmt.Println(err)
 	} else {
 		fmt.Println("created table")
 
+	}
+
+	if err := sql_cm.InsertRow(ctx, conn); err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println("created row for table")
 	}
 }
