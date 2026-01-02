@@ -3,10 +3,13 @@ package main
 import (
 	"context"
 	"fmt"
+	"time"
 
 	postgres "github.com/m4nsur/postgres-lrn/postgres/connection"
 	"github.com/m4nsur/postgres-lrn/postgres/sql_cm"
 )
+
+
 
 func main() {
 	ctx := context.Background()
@@ -22,7 +25,13 @@ func main() {
 
 	}
 
-	if err := sql_cm.InsertRow(ctx, conn); err != nil {
+	taskValues := &sql_cm.TaskStruct{
+	   Title:       "Купить книгу",
+	   Description: "на озон",
+	   Completed:   false,
+	   Created_at:  time.Now(),
+	}
+	if err := sql_cm.InsertRow(ctx, conn, taskValues); err != nil {
 		fmt.Println(err)
 	} else {
 		fmt.Println("created row for table")
