@@ -3,4 +3,5 @@ CREATE TABLE users {
     phone_number: VARCHAR(100)
 }
 
- migrate -path migrations -database "PATH?sslmode=disable" up
+-- migrate create -ext sql -dir migrations -seq exampleName
+-- migrate -path migrations -database "PATH?sslmode=disable" up
