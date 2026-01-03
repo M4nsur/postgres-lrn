@@ -31,9 +31,5 @@ func main() {
 	   Completed:   false,
 	   Created_at:  time.Now(),
 	}
-	if err := sql_cm.InsertRow(ctx, conn, taskValues); err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println("created row for table")
-	}
+
 }
