@@ -9,7 +9,7 @@ import (
 	"github.com/m4nsur/postgres-lrn/postgres/sql_cm"
 )
 
-
+// check shh dsds
 
 func main() {
 	ctx := context.Background()
