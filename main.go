@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"time"
+
 
 	postgres "github.com/m4nsur/postgres-lrn/postgres/connection"
 	"github.com/m4nsur/postgres-lrn/postgres/sql_cm"
@@ -24,12 +24,4 @@ func main() {
 		fmt.Println("created table")
 
 	}
-
-	taskValues := &sql_cm.TaskStruct{
-	   Title:       "Купить книгу",
-	   Description: "на озон",
-	   Completed:   false,
-	   Created_at:  time.Now(),
-	}
-
 }
